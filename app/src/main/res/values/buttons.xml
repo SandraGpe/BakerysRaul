@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="icons">
+        <item>@drawable/historial</item>
+        <item>@drawable/carrito</item>
+        <item>@drawable/catalogo</item>
+        <item>@drawable/user</item>
+        <item>@drawable/detalle</item>
+        <item>@drawable/calif</item>
+    </array>
+    <array name="colors">
+        <item>@android:color/holo_blue_bright</item>
+        <item>@android:color/holo_green_light</item>
+        <item>@android:color/holo_red_light</item>
+        <item>@android:color/holo_purple</item>
+        <item>@android:color/holo_orange_light</item>
+        <item>@android:color/holo_blue_dark</item>
+    </array>
+</resources>

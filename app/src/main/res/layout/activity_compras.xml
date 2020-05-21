@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menuCuadro"
+    tools:context=".Compras">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Panaderia"
+            android:textSize="50sp"
+            android:textColor="@color/menuTexto"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:textStyle="bold|italic"/>
+       <GridLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:rowCount="4"
+           android:columnCount="2"
+           android:layout_margin="15dp"
+           android:alignmentMode="alignMargins"
+           android:layout_gravity="center_horizontal"
+           android:columnOrderPreserved="false">
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/concha"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/concha"
+
+                       >
+
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/beso"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/beso">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/orejas"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/orejas">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/bigote"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/bigote">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/donas"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/donas">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/cuernos"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/cuernos">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/bolillo"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/bolillo">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/gragea"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/gragea">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/quequis"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/quequis">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/salado"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/salado">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/mono"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/mono">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/barquillo"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/barquillo">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/paloma"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/paloma">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/roles"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/roles">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/campechana"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/campechana">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="170dp"
+               android:layout_height="170dp"
+               app:cardCornerRadius="12dp"
+               app:cardElevation="5dp"
+               android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageButton
+                       android:id="@+id/quesadilla"
+                       android:layout_width="160dp"
+                       android:layout_height="160dp"
+                       android:background="@drawable/quesadilla">
+                   </ImageButton>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+       </GridLayout>
+    </LinearLayout>
+</ScrollView>
