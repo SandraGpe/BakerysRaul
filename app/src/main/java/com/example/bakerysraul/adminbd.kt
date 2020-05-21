@@ -19,7 +19,7 @@ class adminbd(context: Context): SQLiteOpenHelper(context,DataBase,null,1) {
         //BD ventas tabla emepleado, ejemplo para graficar
         db?.execSQL("Create Table EmpleadoCalif(_id int primary key, NomEmp text, Calif float)")
         //Tabla para el Perfil del Usuario/Cliente
-        db?.execSQL("Create Table perfil(_id int primary key, nomusr text, apellidousr text,correoUsr text, RFC text, comunidad text,colonia text,cp int,calle text, tel int)")
+        db?.execSQL("Create Table perfil(_idCliente int primary key, nomCliente text, apellidoCliente text,RFC text, comunidad text,colonia text,calle text,cp int, tel int)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {}

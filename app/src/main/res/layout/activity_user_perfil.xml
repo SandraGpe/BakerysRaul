@@ -1,191 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backperfil"
+    android:padding="10dp"
+    android:orientation="vertical"
     tools:context=".UserPerfil">
 
-    <TextView
-        android:id="@+id/Titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Perfil"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/menuTexto"
-        android:textSize="50sp"
-        android:textStyle="bold|italic"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/txtNom"
-        android:layout_width="200dp"
-        android:layout_height="45dp"
-        android:ems="15"
-        android:hint="Nombre(s):"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.155" />
 
-    <EditText
-        android:id="@+id/txtApellido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="15"
-        android:hint="Apellido(s):"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24" />
+            <TextView
+                android:id="@+id/Titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="25dp"
+                android:text="Perfil"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/menuTexto"
+                android:textSize="50sp"
+                android:textStyle="bold|italic"/>
 
-    <EditText
-        android:id="@+id/txtRFC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="15"
-        android:hint="RFC"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
+            <EditText
+                android:id="@+id/txtIdU"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="100dp"
+                android:background="#11000000"
+                android:ems="15"
+                android:hint="ID"
+                android:inputType="number"
+                android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/txtComunidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="15"
-        android:hint="Comunidad:"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/txtCliente"
+                android:layout_width="350dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="160dp"
+                android:background="#11000000"
+                android:ems="15"
+                android:textSize="24sp"
+                android:hint="Nombre(s):"
+                android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/txtCP"
-        android:layout_width="180dp"
-        android:layout_height="45dp"
-        android:ems="15"
-        android:hint="Colonia"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588" />
+            <EditText
+                android:id="@+id/txtApellido"
+                android:layout_width="350dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="220dp"
+                android:background="#11000000"
+                android:ems="15"
+                android:textSize="24sp"
+                android:hint="Apellido(s):"
+                android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/txtColonia"
-        android:layout_width="125dp"
-        android:layout_height="45dp"
-        android:ems="15"
-        android:hint="CP"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588" />
+            <EditText
+                android:id="@+id/txtRFC"
+                android:layout_width="350dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="280dp"
+                android:background="#11000000"
+                android:ems="15"
+                android:textSize="24sp"
+                android:hint="RFC"
+                android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/txtCalle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="15"
-        android:hint="Calle y #"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673" />
+            <EditText
+                android:id="@+id/txtComunidad"
+                android:layout_width="350dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="340dp"
+                android:background="#11000000"
+                android:ems="15"
+                android:hint="Comunidad:"
+                android:textSize="24sp" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:background="@drawable/update1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.745"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.908">
+            <EditText
+                android:id="@+id/txtColonia"
+                android:layout_width="220dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="400dp"
+                android:background="#11000000"
+                android:ems="15"
+                android:hint="Colonia:"
+                android:textSize="24sp" />
 
-    </ImageButton>
+            <EditText
+                android:id="@+id/txtCP"
+                android:layout_width="125dp"
+                android:layout_height="55dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="400dp"
+                android:layout_marginRight="20dp"
+                android:background="#11000000"
+                android:ems="15"
+                android:hint="CP:"
+                android:textSize="24sp" />
 
-    <ImageButton
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/save1"
-        android:onClick="Agregar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.33"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.901">
+            <EditText
+                android:id="@+id/txtCalle"
+                android:layout_width="350dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="460dp"
+                android:background="#11000000"
+                android:ems="15"
+                android:textSize="24sp"
+                android:hint="Calle y #"
+                android:inputType="textPersonName"/>
 
-    </ImageButton>
+            <EditText
+                android:id="@+id/txtTel"
+                android:layout_width="350dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="520dp"
+                android:background="#11000000"
+                android:ems="15"
+                android:textSize="24sp"
+                android:hint="Tel. Particular:"
+                android:inputType="phone"/>
 
-    <EditText
-        android:id="@+id/txtCorr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="15"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.329" />
 
-    <EditText
-        android:id="@+id/txtTel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="15"
-        android:hint="Tel. Particular:"
-        android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.763" />
+            <ImageButton
+                android:id="@+id/imgActualizar"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="590dp"
+                android:layout_marginLeft="210dp"
+                android:background="@drawable/peditar"
+                android:ems="15"
+                android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/txtIdU"
-        android:layout_width="100dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:hint="ID"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.855"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.154" />
+            <ImageButton
+                android:id="@+id/imgBorrar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="650dp"
+                android:background="@drawable/pborrar"
+                android:ems="15"
+                android:onClick="Borrar"
+                android:textSize="24sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageButton
+                android:id="@+id/imgGuardar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="590dp"
+                android:layout_marginLeft="60dp"
+                android:background="@drawable/pguardar"
+                android:ems="15"
+                android:onClick="Agregar"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/imgCargar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/pbuscar"
+                android:ems="15"
+                android:onClick="btnBuscar"
+                android:textSize="24sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

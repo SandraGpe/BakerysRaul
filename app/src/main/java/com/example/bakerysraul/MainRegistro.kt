@@ -25,21 +25,21 @@ class MainRegistro : AppCompatActivity() {
     fun btnReg(v: View){
 
     if (txtCorr.text.isEmpty() ||
-        txtNom.text.isEmpty() ||
+        txtEmp.text.isEmpty() ||
         txtContra.text.isEmpty()) {
         txtCorr.setError("Error faltan datos por ingresar")
         txtCorr.requestFocus()
     } else {
         val corr = txtCorr.text.toString()
-        val nom = txtNom.text.toString()
+        val nom = txtEmp.text.toString()
         val contra = txtContra.text.toString()
         var jsonEntrada = JSONObject()
-        jsonEntrada.put("nomusr", txtNom.text.toString())
+        jsonEntrada.put("nomusr", txtEmp.text.toString())
         jsonEntrada.put("correoUsr", txtCorr.text.toString())
         jsonEntrada.put("contrasena",txtContra.text.toString())
         sendRequest(IP + "/WSBakery/bdInsert.php",jsonEntrada)
             txtCorr.setText("")
-            txtNom.setText("")
+            txtEmp.setText("")
             Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show();
             val acti : Intent= Intent(this,PrincipalMenu::class.java)
             acti.putExtra(PrincipalMenu.EXTRA_CORR,corr)
@@ -48,26 +48,6 @@ class MainRegistro : AppCompatActivity() {
          }
         }
 
-
-    /*fun Agregar(view: View) {
-        if (txtNom.text.toString().isEmpty()||
-            txtCorr.text.toString().isEmpty()||
-            txtContra.text.toString().isEmpty()){
-            txtCorr.setError("Falta información de Ingresar")
-            txtCorr.requestFocus()
-        }
-        else
-        {
-            val nom = txtNom.text.toString()
-            val corr = txtCorr.text.toString()
-            val contra = txtContra.text.toString()
-            var jsonEntrada = JSONObject()
-            jsonEntrada.put("nomProd", txtNom.text.toString())
-            jsonEntrada.put("existencia", txtCorr.text.toString())
-            jsonEntrada.put("precio",txtCorr.text.toString())
-            sendRequest(IP + "/WSBakery/bdInsert.php",jsonEntrada)
-        }
-    }*/
     //Rutina para mandar ejecutar un web service de tipo Insert, Update o Delete
     fun sendRequest( wsURL: String, jsonEnt: JSONObject){
         val jsonObjectRequest = JsonObjectRequest(
@@ -77,7 +57,7 @@ class MainRegistro : AppCompatActivity() {
                 val msg = response["message"]
                 if (succ == 200){
                     txtCorr.setText("")
-                    txtNom.setText("")
+                    txtEmp.setText("")
                     txtContra.setText("")
                     txtCorr.requestFocus()
                     Toast.makeText(this, "Success:${succ}  Message:${msg} Servidor Web Modificado", Toast.LENGTH_SHORT).show();
