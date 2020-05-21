@@ -143,10 +143,11 @@
                 android:id="@+id/imgActualizar"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:layout_marginTop="590dp"
                 android:layout_marginLeft="210dp"
+                android:layout_marginTop="590dp"
                 android:background="@drawable/peditar"
                 android:ems="15"
+                android:onClick="Actualizar"
                 android:textSize="24sp" />
 
             <ImageButton
@@ -161,6 +162,28 @@
                 android:textSize="24sp" />
 
             <ImageButton
+                android:id="@+id/imgLimpiar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="650dp"
+                android:background="@drawable/plimpiar"
+                android:ems="15"
+                android:onClick="Limpiar"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/imgCargar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="180dp"
+                android:layout_marginTop="650dp"
+                android:background="@drawable/pcargar"
+                android:ems="15"
+                android:onClick="getAllClientes"
+                android:textSize="24sp" />
+
+            <ImageButton
                 android:id="@+id/imgGuardar"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -172,14 +195,14 @@
                 android:textSize="24sp" />
 
             <ImageButton
-                android:id="@+id/imgCargar"
+                android:id="@+id/imgBuscar"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="250dp"
                 android:layout_marginTop="100dp"
                 android:background="@drawable/pbuscar"
                 android:ems="15"
-                android:onClick="btnBuscar"
+                android:onClick="Buscar"
                 android:textSize="24sp" />
         </RelativeLayout>
     </LinearLayout>

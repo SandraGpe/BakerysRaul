@@ -20,6 +20,20 @@ class UserPerfil : AppCompatActivity() {
         setContentView(R.layout.activity_user_perfil)
     }
 
+    /*BOTONES EN ORDEN
+    1.Agregar ♥
+    2.Buscar
+    3.Consultar
+    4.getallClientes
+    5.Borrar
+    6.Actualizar
+    7.Limpiar
+
+
+
+     */
+
+
     //SI FUNCIONA
     fun Agregar(v: View){
         if (txtCliente.text.toString().isEmpty() ||
@@ -54,7 +68,7 @@ class UserPerfil : AppCompatActivity() {
         }
     }
 
-    fun btnBuscar(view: View){
+    fun Buscar(view: View){
         if (txtIdU.text.toString().isEmpty()){
             txtIdU.setError("Falta Clave del Cliente")
             Toast.makeText(this, "Falta Informacion del ID", Toast.LENGTH_LONG).show();
@@ -139,6 +153,43 @@ class UserPerfil : AppCompatActivity() {
          }
      }
 
+    //CODIGO DE 17/05/2020
+    // Este boton elimina los productos de la base de datos local y ejecuta el servicio web getProductos.php
+    //Que consulta todos los producto del servidor web, para insertarlos en la base de datos local
+    fun getAllClientes(view: View) {
+        val wsURL = IP + "/WSBakery/getClientes.php"
+        val admin = adminbd(this)
+        admin.Ejecuta("DELETE FROM perfil")
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.POST,wsURL,null,
+            Response.Listener { response ->
+                val succ = response["success"]
+                val msg = response["message"]
+                val sensadoJson = response.getJSONArray("clientes")
+                for (i in 0 until sensadoJson.length()){
+                    // Los nombres del getString son como los arroja el servicio web
+                    val idcliente = sensadoJson.getJSONObject(i).getString("idCliente")
+                    val nomcliente = sensadoJson.getJSONObject(i).getString("nomcliente")
+                    val apellidoCliente = sensadoJson.getJSONObject(i).getString("apellidoCliente")
+                    val RFC = sensadoJson.getJSONObject(i).getString("RFC")
+                    val comunidad = sensadoJson.getJSONObject(i).getString("comunidad")
+                    val colonia= sensadoJson.getJSONObject(i).getString("colonia")
+                    val calle = sensadoJson.getJSONObject(i).getString("calle")
+                    val cp= sensadoJson.getJSONObject(i).getString("cp")
+                    val tel = sensadoJson.getJSONObject(i).getString("tel")
+
+                    val sentencia = "INSERT INTO perfil(nomCliente,apellidoCliente,RFC,comunidad,colonia,calle,cp,tel) values(${idcliente}, '${nomcliente}','${apellidoCliente}', '${RFC}', '${comunidad}', '${colonia}', '${calle}', ${cp}, ${tel})"
+                    val res = admin.Ejecuta(sentencia)
+                }
+            },
+            Response.ErrorListener { error ->
+                Toast.makeText(this, "Error getAllClientes: " + error.message.toString() , Toast.LENGTH_LONG).show();
+                Log.d("GonzalezSandra",error.message.toString() )
+            }
+        )
+        VolleySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
+    }
+
     fun Borrar(view: View) {
         if (txtIdU.text.toString().isEmpty()){
             Toast.makeText(this, "Falta Clave del Cliente",
@@ -160,6 +211,64 @@ class UserPerfil : AppCompatActivity() {
             txtIdU.requestFocus()
             sendRequest(IP + "/WSAndroid/deleteProducto.php",jsonEntrada)
         }
+    }
+
+    fun Actualizar(view: View) {
+        if (txtCliente.text.toString().isEmpty() ||
+            txtApellido.text.toString().isEmpty() ||
+            txtComunidad.text.toString().isEmpty() ||
+            txtCalle.text.toString().isEmpty() ||
+            txtColonia.text.toString().isEmpty() ||
+            txtRFC.text.toString().isEmpty() ||
+            txtTel.text.toString().isEmpty()){
+            txtIdU.setError("Falta información de Ingresar")
+            txtIdU.requestFocus()
+        }
+        else
+        {
+            val nom = txtCliente.text.toString()
+            val ape = txtApellido.text.toString()
+            val rfc = txtRFC.text.toString()
+            val com = txtComunidad.text.toString()
+            val col = txtColonia.text.toString()
+            val calle = txtCalle.text.toString()
+            val cp = txtCP.text.toString()
+            val tel = txtTel.text.toString()
+            val admin = adminbd(this)
+            var jsonEntrada = JSONObject()
+            jsonEntrada.put("nomCliente", txtCliente.text.toString())
+            jsonEntrada.put("apellidoCliente", txtApellido.text.toString())
+            jsonEntrada.put("RFC",txtRFC.text.toString())
+            jsonEntrada.put("comunidad",txtComunidad.text.toString())
+            jsonEntrada.put("colonia",txtColonia.text.toString())
+            jsonEntrada.put("calle",txtCalle.text.toString())
+            jsonEntrada.put("cp",txtCP.text.toString())
+            jsonEntrada.put("tel",txtTel.text.toString())
+            txtIdU.setText("")
+            txtCliente.setText("")
+            txtApellido.setText("")
+            txtRFC.setText("")
+            txtComunidad.setText("")
+            txtColonia.setText("")
+            txtCalle.setText("")
+            txtCP.setText("")
+            txtTel.setText("")
+            txtIdU.requestFocus()
+            sendRequest(IP + "/WSBakery/updateCliente.php",jsonEntrada)
+
+            }
+        }
+
+    fun Limpiar(v:View){
+        txtIdU.setText("")
+        txtCliente.setText("")
+        txtApellido.setText("")
+        txtRFC.setText("")
+        txtComunidad.setText("")
+        txtColonia.setText("")
+        txtCalle.setText("")
+        txtCP.setText("")
+        txtTel.setText("")
     }
 
     //Rutina para mandar ejecutar un web service de tipo Insert, Update o Delete
