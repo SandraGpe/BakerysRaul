@@ -14,6 +14,7 @@ import org.json.JSONObject
 class UserPerfil : AppCompatActivity() {
     val IP = "http://192.168.1.77" // Dirección IP del servidor web que almacena los servicios web
     val idcliente = 0
+    var bandera : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,12 +28,7 @@ class UserPerfil : AppCompatActivity() {
     4.getallClientes
     5.Borrar
     6.Actualizar
-    7.Limpiar
-
-
-
-     */
-
+    7.Limpiar*/
 
     //SI FUNCIONA
     fun Agregar(v: View){
@@ -123,7 +119,7 @@ class UserPerfil : AppCompatActivity() {
     }
 
     // Esta consulta se hace en la base de datos local, partiendo de que la información ya se cargo
-    // ejecutando el boton de Carga Productos del servidor web
+    // ejecutando el boton de Cargar Clientes del servidor web
     fun Consultar(view: View) {
          if (txtIdU.text.toString().isEmpty()){
              txtIdU.setError("Falta ingresar clave del producto")
@@ -165,7 +161,7 @@ class UserPerfil : AppCompatActivity() {
             Response.Listener { response ->
                 val succ = response["success"]
                 val msg = response["message"]
-                val sensadoJson = response.getJSONArray("clientes")
+                val sensadoJson = response.getJSONArray("cliente")
                 for (i in 0 until sensadoJson.length()){
                     // Los nombres del getString son como los arroja el servicio web
                     val idcliente = sensadoJson.getJSONObject(i).getString("idCliente")
@@ -178,7 +174,7 @@ class UserPerfil : AppCompatActivity() {
                     val cp= sensadoJson.getJSONObject(i).getString("cp")
                     val tel = sensadoJson.getJSONObject(i).getString("tel")
 
-                    val sentencia = "INSERT INTO perfil(nomCliente,apellidoCliente,RFC,comunidad,colonia,calle,cp,tel) values(${idcliente}, '${nomcliente}','${apellidoCliente}', '${RFC}', '${comunidad}', '${colonia}', '${calle}', ${cp}, ${tel})"
+                    val sentencia = "INSERT INTO perfil(idCliente,nomCliente,apellidoCliente,RFC,comunidad,colonia,calle,cp,tel) values(${idcliente},'${nomcliente}','${apellidoCliente}','${RFC}','${comunidad}','${colonia}','${calle}',${cp},${tel})"
                     val res = admin.Ejecuta(sentencia)
                 }
             },
