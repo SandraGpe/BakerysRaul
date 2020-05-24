@@ -30,7 +30,7 @@ class CalifEmpresa : AppCompatActivity() {
             val cal = etCalif.text.toString().toFloat()
             val sentencia = "Insert into EmpleadoCalif(NomEmp,Calif) values " +
                     "('${nom}',${cal})"
-            if (admin.Ejecuta(sentencia) == 1){
+            if (admin.Ejecuta(sentencia)){
                 Toast.makeText(this, "Empleado Guardado", Toast.LENGTH_SHORT).show();
                 etCalif.setText("")
                 etNom.setText("")

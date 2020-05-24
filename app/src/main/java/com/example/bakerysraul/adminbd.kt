@@ -19,32 +19,32 @@ class adminbd(context: Context): SQLiteOpenHelper(context,DataBase,null,1) {
         //BD ventas tabla emepleado, ejemplo para graficar
         db?.execSQL("Create Table EmpleadoCalif(_id int primary key, NomEmp text, Calif float)")
         //Tabla para el Perfil del Usuario/Cliente
-        db?.execSQL("Create Table perfil(_idCliente int primary key, nomCliente text, apellidoCliente text,RFC text, comunidad text,colonia text,calle text,cp int, tel int)")
+        db?.execSQL("Create Table perfil(idCliente int primary key autoincrement, nomCliente text, apellidoCliente text,RFC text, comunidad text,colonia text,calle text,cp int, tel int)")
     }
 
-    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {}
-
-    //Función para mandar ejecutar un Insert,update o delete
-    fun Ejecuta(sentencia: String) : Int{
+    // Permite ejecutar Insert, Update o Delete
+    fun Ejecuta(sentencia: String): Boolean{
         try {
-            val db = this.writableDatabase
-            db.execSQL(sentencia)
-            return 1
+            val bd = this.writableDatabase
+            bd.execSQL(sentencia)
+            bd.close()
+            return true
         }
-        catch (ex: Exception){
-            return 0 //Terminación no exitosa
+        catch (ex:Exception){
+            return false
         }
     }
 
-    //funcion para mandar ejecutar una consulta SQL (Select)
+    // Permir ejecutar una consulta
     fun Consulta(query: String): Cursor?{
         try {
-            val db = this.readableDatabase
-            return db.rawQuery(query,null)
-
+            val bd = this.readableDatabase
+            return bd.rawQuery(query,null)
         }
-        catch (ex:java.lang.Exception) {
+        catch (ex:Exception){
             return null
         }
     }
+
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {}
 }
