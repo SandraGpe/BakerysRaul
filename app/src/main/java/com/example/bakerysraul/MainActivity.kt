@@ -10,9 +10,6 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.txtContra
-import kotlinx.android.synthetic.main.activity_main.txtCorr
-import kotlinx.android.synthetic.main.activity_main_registro.*
 
 class MainActivity : AppCompatActivity() {
     val IP = "http://192.168.1.77" // Dirección IP del servidor web que almacena los servicios web
@@ -67,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(acti)
             } else{
                 Toast.makeText(this, "ID o contraseña invalido", Toast.LENGTH_LONG).show();
-                txtCorr.requestFocus()
+                txtidEmp.requestFocus()
             }
         }
     }

@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_principal_menu.*
 
 
 class PrincipalMenu : AppCompatActivity() {
-    var corru : String = ""
+    var id : String = ""
     var contra : String = ""
 
     companion object{
@@ -27,7 +27,7 @@ class PrincipalMenu : AppCompatActivity() {
         val reg = intent
         if (reg != null && reg.hasExtra(EXTRA_ID) && reg.hasExtra(EXTRA_CONTRA)){
             //se ejecuta cuando se haya logeado o cuando venga de un registro
-            corru = reg.getStringExtra(EXTRA_ID)
+            id = reg.getStringExtra(EXTRA_ID)
             contra = reg.getStringExtra(EXTRA_CONTRA)
         } else {
             val acti : Intent = Intent(this,MainRegistro::class.java)

@@ -17,16 +17,16 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/txtCorr"
+        android:id="@+id/txtidEmp"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
         android:background="#11000000"
-        android:drawableLeft="@drawable/ic_action_email"
+        android:drawableLeft="@drawable/ic_action_id"
         android:ems="10"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress"
+        android:hint="ID"
+        android:inputType="textPersonName"
         android:textColor="#13181C"
         android:textSize="24sp" />
 
