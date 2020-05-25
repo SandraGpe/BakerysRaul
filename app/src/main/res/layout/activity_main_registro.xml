@@ -43,19 +43,39 @@
         app:layout_constraintTop_toBottomOf="@+id/txtCorr" />
 
     <EditText
+        android:id="@+id/txtidEmp"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:drawableLeft="@drawable/ic_action_id"
+        android:ems="10"
+        android:hint="ID"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        android:textColor="#13181C"
+        android:background="#11000000"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.817" />
+
+    <EditText
         android:id="@+id/txtEmp"
         android:layout_width="300dp"
         android:layout_height="55dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="252dp"
         android:drawableLeft="@drawable/ic_action_user"
         android:ems="10"
         android:hint="Usuario"
         android:inputType="textPersonName"
         android:textSize="24sp"
+        android:textColor="#13181C"
+        android:background="#11000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnReg"

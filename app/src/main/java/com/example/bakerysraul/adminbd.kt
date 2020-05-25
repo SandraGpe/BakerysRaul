@@ -13,7 +13,7 @@ class adminbd(context: Context): SQLiteOpenHelper(context,DataBase,null,1) {
 
     override fun onCreate(db: SQLiteDatabase?) {
         //crear tablas
-        db?.execSQL("create table usuario (correoUsr text primary key,nomusr text,contrasena text)")
+        db?.execSQL("create table usuario (correoUsr text primary key, idEmp int, nomusr text,contrasena text)")
         //crear otra tabla, lo mismo de arriba db?
         db?.execSQL("create table pan(codigo INTEGER PRIMARY KEY AUTOINCREMENT, nomPan text,precio double,cantidad double)")
         //BD ventas tabla emepleado, ejemplo para graficar

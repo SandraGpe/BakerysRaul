@@ -147,8 +147,7 @@
                 android:layout_marginTop="100dp"
                 android:background="@drawable/peditar"
                 android:ems="15"
-                android:onClick="Actualizar"
-                android:textSize="24sp" />
+                android:onClick="Actualizar"/>
 
             <ImageButton
                 android:id="@+id/imgBorrar"
@@ -158,8 +157,7 @@
                 android:layout_marginTop="590dp"
                 android:background="@drawable/pborrar"
                 android:ems="15"
-                android:onClick="Borrar"
-                android:textSize="24sp" />
+                android:onClick="Borrar"/>
 
             <ImageButton
                 android:id="@+id/imgLimpiar"
@@ -169,8 +167,7 @@
                 android:layout_marginTop="590dp"
                 android:background="@drawable/plimpiar"
                 android:ems="15"
-                android:onClick="Limpiar"
-                android:textSize="24sp" />
+                android:onClick="Limpiar"/>
 
             <ImageButton
                 android:id="@+id/imgCargar"
@@ -180,20 +177,7 @@
                 android:layout_marginTop="590dp"
                 android:background="@drawable/pcargar"
                 android:ems="15"
-                android:onClick="getAllClientes"
-                android:textSize="24sp" />
-
-            <ImageButton
-                android:id="@+id/imgConsultar"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="310dp"
-                android:layout_marginTop="590dp"
-                android:layout_marginRight="30dp"
-                android:background="@drawable/pconsultar"
-                android:ems="15"
-                android:onClick="Consultar"
-                android:textSize="24sp" />
+                android:onClick="getAllClientes"/>
 
             <ImageButton
                 android:id="@+id/imgGuardar"
@@ -203,8 +187,7 @@
                 android:layout_marginLeft="30dp"
                 android:background="@drawable/pguardar"
                 android:ems="15"
-                android:onClick="Agregar"
-                android:textSize="24sp" />
+                android:onClick="Agregar"/>
 
             <ImageButton
                 android:id="@+id/imgBuscar"
@@ -214,8 +197,7 @@
                 android:layout_marginTop="100dp"
                 android:background="@drawable/pbuscar"
                 android:ems="15"
-                android:onClick="Buscar"
-                android:textSize="24sp" />
+                android:onClick="Buscar"/>
         </RelativeLayout>
     </LinearLayout>
 </ScrollView>

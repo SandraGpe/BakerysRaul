@@ -125,10 +125,10 @@ class UserPerfil : AppCompatActivity() {
 
     // Esta consulta se hace en la base de datos local, partiendo de que la información ya se cargo
     // ejecutando el boton de Cargar Clientes del servidor web
-    fun Consultar(view: View) {
+    /*fun Consultar(view: View) {
         if (txtIdU.text.toString().isEmpty()){
             txtIdU.setError("Falta ingresar clave del producto")
-            Toast.makeText(this, "Falta información del id", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Falta información del ID", Toast.LENGTH_SHORT).show();
             txtIdU.requestFocus()
         }
         else{
@@ -152,7 +152,7 @@ class UserPerfil : AppCompatActivity() {
                 txtIdU.requestFocus()
             }
         }
-    }
+    }*/
 
     //SI FUNCIONA
     fun Actualizar(view: View) {

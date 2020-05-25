@@ -24,20 +24,25 @@ class MainRegistro : AppCompatActivity() {
 
     fun btnReg(v: View){
 
-    if (txtCorr.text.isEmpty() ||
+    if (txtidEmp.text.isEmpty() ||
+        txtCorr.text.isEmpty() ||
         txtEmp.text.isEmpty() ||
         txtContra.text.isEmpty()) {
-        txtCorr.setError("Error faltan datos por ingresar")
-        txtCorr.requestFocus()
+        txtidEmp.setError("Error faltan datos por ingresar")
+        txtidEmp.requestFocus()
     } else {
+        val id = txtidEmp.text.toString()
         val corr = txtCorr.text.toString()
         val nom = txtEmp.text.toString()
         val contra = txtContra.text.toString()
         var jsonEntrada = JSONObject()
+        jsonEntrada.put("idEmp", txtidEmp.text.toString())
         jsonEntrada.put("nomusr", txtEmp.text.toString())
         jsonEntrada.put("correoUsr", txtCorr.text.toString())
         jsonEntrada.put("contrasena",txtContra.text.toString())
         sendRequest(IP + "/WSBakery/bdInsert.php",jsonEntrada)
+            txtidEmp.setText("")
+            txtContra.setText("")
             txtCorr.setText("")
             txtEmp.setText("")
             Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show();
