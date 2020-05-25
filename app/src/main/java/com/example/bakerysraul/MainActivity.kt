@@ -10,6 +10,9 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.txtContra
+import kotlinx.android.synthetic.main.activity_main.txtCorr
+import kotlinx.android.synthetic.main.activity_main_registro.*
 
 class MainActivity : AppCompatActivity() {
     val IP = "http://192.168.1.77" // Dirección IP del servidor web que almacena los servicios web
@@ -18,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
     //checar este codigo
-    /*
+
     fun empleados(v:View){
         val wsURL = IP + "/WSBakery/bdLogin.php"
         val admin = adminbd(this)
@@ -31,9 +34,9 @@ class MainActivity : AppCompatActivity() {
                 val sensadoJson = response.getJSONArray("empleados")
                 for (i in 0 until sensadoJson.length()){
                     // Los nombres del getString son como los arroja el servicio web
-                    val corr = sensadoJson.getJSONObject(i).getString("correoUsr")
+                    val id = sensadoJson.getJSONObject(i).getString("idEmp")
                     val contra = sensadoJson.getJSONObject(i).getString("contrasena")
-                    val sentencia = "INSERT INTO usuario(corrUsr,contrasena) values(${corr},'${contra})"
+                    val sentencia = "INSERT INTO usuario(idEmp,contrasena) values(${id},'${contra})"
                     val res = admin.Ejecuta(sentencia)
                 }
             },
@@ -43,27 +46,27 @@ class MainActivity : AppCompatActivity() {
             }
         )
         VolleySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
-    }*/
+    }
 
     fun btnLogin(view: View){
-        if (txtCorr.text.isEmpty() || txtContra.text.isEmpty()){
-            txtCorr.setError("Error, faltan datos de entrada")
-            txtCorr.requestFocus()
+        if (txtidEmp.text.isEmpty() || txtContra.text.isEmpty()){
+            txtidEmp.setError("Error, faltan datos de entrada")
+            txtidEmp.requestFocus()
         } else{
-            var corr = txtCorr.text.toString()
+            var id = txtidEmp.text.toString()
             var contra = txtContra.text.toString()
             var admin = adminbd(this)
-            var query = "Select * from usuarios where correoUsr = '$corr' and contrasena='$contra'"
+            var query = "Select * from usuario where idEmp = '$id' and contrasena='$contra'"
             val resul = admin.Consulta(query)
             if (resul!!.moveToFirst()){
-                corr = resul.getString(0)
-                contra = resul.getString(2)
+                id = resul.getString(1)
+                contra = resul.getString(3)
                 val acti = Intent(this, PrincipalMenu::class.java)
-                acti.putExtra(PrincipalMenu.EXTRA_CORR,corr)
+                acti.putExtra(PrincipalMenu.EXTRA_ID,id)
                 acti.putExtra(PrincipalMenu.EXTRA_CONTRA,contra)
                 startActivity(acti)
             } else{
-                Toast.makeText(this, "Correo o contraseña invalido", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ID o contraseña invalido", Toast.LENGTH_LONG).show();
                 txtCorr.requestFocus()
             }
         }

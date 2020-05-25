@@ -14,7 +14,7 @@ class PrincipalMenu : AppCompatActivity() {
     var contra : String = ""
 
     companion object{
-        val EXTRA_CORR = "correo"
+        val EXTRA_ID = "id"
         val EXTRA_CONTRA = "contrasena"
     }
     val menu = arrayOf("Historial", "Carrito", "DetallePed", "Perfil", "Calificar", "Catalogo")
@@ -25,9 +25,9 @@ class PrincipalMenu : AppCompatActivity() {
         setContentView(R.layout.activity_principal_menu)
 
         val reg = intent
-        if (reg != null && reg.hasExtra(EXTRA_CORR) && reg.hasExtra(EXTRA_CONTRA)){
+        if (reg != null && reg.hasExtra(EXTRA_ID) && reg.hasExtra(EXTRA_CONTRA)){
             //se ejecuta cuando se haya logeado o cuando venga de un registro
-            corru = reg.getStringExtra(EXTRA_CORR)
+            corru = reg.getStringExtra(EXTRA_ID)
             contra = reg.getStringExtra(EXTRA_CONTRA)
         } else {
             val acti : Intent = Intent(this,MainRegistro::class.java)

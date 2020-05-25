@@ -47,7 +47,7 @@ class MainRegistro : AppCompatActivity() {
             txtEmp.setText("")
             Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show();
             val acti : Intent= Intent(this,PrincipalMenu::class.java)
-            acti.putExtra(PrincipalMenu.EXTRA_CORR,corr)
+            acti.putExtra(PrincipalMenu.EXTRA_ID,id)
             acti.putExtra(PrincipalMenu.EXTRA_CONTRA,contra)
             startActivity(acti)
          }
