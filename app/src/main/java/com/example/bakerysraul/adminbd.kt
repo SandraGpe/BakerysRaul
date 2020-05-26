@@ -15,23 +15,25 @@ class adminbd(context: Context): SQLiteOpenHelper(context,DataBase,null,1) {
         //crear tablas
         db?.execSQL("create table usuario (correoUsr text primary key, idEmp int, nomusr text,contrasena text)")
         //crear otra tabla, lo mismo de arriba db?
-        db?.execSQL("create table pan(codigo INTEGER PRIMARY KEY AUTOINCREMENT, nomPan text,precio double,cantidad double)")
+        db?.execSQL("create table pan(_codigo INTEGER PRIMARY KEY, nomPan text,precio double,cantidad double)")
         //BD ventas tabla emepleado, ejemplo para graficar
-        db?.execSQL("Create Table EmpleadoCalif(_id int primary key, NomEmp text, Calif float)")
+        db?.execSQL("Create Table calificar(idCli int primary key, idEmpleado int, calif float)")
         //Tabla para el Perfil del Usuario/Cliente
-        db?.execSQL("Create Table perfil(idCliente int primary key autoincrement, nomCliente text, apellidoCliente text,RFC text, comunidad text,colonia text,calle text,cp int, tel int)")
+        db?.execSQL("Create Table perfil(_idCliente int primary key, nomCliente text, apellidoCliente text,RFC text, comunidad text,colonia text,calle text,cp int, tel int)")
+
     }
 
     // Permite ejecutar Insert, Update o Delete
-    fun Ejecuta(sentencia: String): Boolean{
-        try {
-            val bd = this.writableDatabase
-            bd.execSQL(sentencia)
-            bd.close()
-            return true
+    fun Ejecuta(sentencia: String):Int
+    {
+        try{
+            val db = this.writableDatabase
+            db.execSQL(sentencia)
+            db.close()
+            return 1
         }
         catch (ex:Exception){
-            return false
+            return 0
         }
     }
 
