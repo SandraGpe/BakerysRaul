@@ -37,8 +37,14 @@ class CalifEmpresa : AppCompatActivity() {
             val cal = etCalif.text.toString().toFloat()
             val sentencia = "Insert into calificar(idCli,idEmpleado,calif) values " +
                     "(${cli},${emp},${cal})"
+            var jsonEntrada = JSONObject()
+            jsonEntrada.put("idCliente", etIDC.text.toString())
+            jsonEntrada.put("idEmpleado", etIDE.text.toString())
+            jsonEntrada.put("calif", etCalif.text.toString().toFloat())
+            sendRequest(IP + "/WSBakery/saveCalif.php",jsonEntrada)
             if (admin.Ejecuta(sentencia)==1){
                 Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show();
+
                 etCalif.setText("0")
                 etIDE.setText("")
                 etIDC.setText("")
