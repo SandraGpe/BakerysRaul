@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,89 +9,123 @@
     <TextView
         android:id="@+id/titulo"
         android:layout_width="match_parent"
-        android:layout_height="98dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="633dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="445dp"
         android:background="@drawable/azul"
         android:text="Pedidos"
         android:textColor="#0d47a1"
         android:textSize="50sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.003" />
 
     <EditText
         android:id="@+id/txtIDPed"
-        android:layout_width="250dp"
+        android:layout_width="350dp"
         android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="219dp"
-        android:layout_marginBottom="458dp"
+        android:layout_marginTop="80dp"
         android:background="#11000000"
         android:ems="15"
         android:hint="ID Pedido"
         android:inputType="textPersonName"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/txtIDCli"
-        android:layout_width="250dp"
+        android:layout_width="350dp"
         android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="134dp"
-        android:layout_marginBottom="543dp"
+        android:layout_marginTop="10dp"
         android:background="#11000000"
         android:ems="15"
         android:hint="ID Cliente"
         android:inputType="textPersonName"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIDPed"
+        app:layout_constraintVertical_bias="0.077" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="250dp"
+    <EditText
+        android:id="@+id/Mes"
+        android:layout_width="220dp"
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="368dp"
-        android:hint="Mes"
-        android:padding="20dp"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/fechaEnt"
-        android:layout_width="200dp"
-        android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="191dp"
-        android:layout_marginBottom="288dp"
+        android:layout_marginTop="10dp"
         android:background="#11000000"
         android:ems="15"
         android:gravity="center"
-        android:hint="Fecha"
-        android:textSize="24sp"/>
+        android:hint="Mes"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIDCli"
+        app:layout_constraintVertical_bias="0.112" />
 
-    <Spinner
-        android:id="@+id/spinner2"
+    <EditText
+        android:id="@+id/Dia"
         android:layout_width="100dp"
         android:layout_height="55dp"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="267dp"
-        android:layout_marginBottom="287dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="252dp"
+        android:background="#11000000"
+        android:ems="15"
+        android:gravity="center"
         android:hint="Dia"
-        android:padding="20dp"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toEndOf="@+id/Mes" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="76dp"
+        android:background="@drawable/pguardar"
+        android:onClick="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/shop"
+        android:onClick="aaa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,12 +15,12 @@ class adminbd(context: Context): SQLiteOpenHelper(context,DataBase,null,1) {
         //crear tablas
         db?.execSQL("create table usuario (correoUsr text primary key, idEmp int, nomusr text,contrasena text)")
         //crear otra tabla, lo mismo de arriba db?
-        db?.execSQL("create table pan(_codigo INTEGER PRIMARY KEY, nomPan text,precio double,cantidad double)")
+        db?.execSQL("create table pedidos(idPed int, idCli text,Mes text,Dia int)")
         //BD ventas tabla emepleado, ejemplo para graficar
         db?.execSQL("Create Table calificar(idCli int primary key, idEmpleado int, calif float)")
         //Tabla para el Perfil del Usuario/Cliente
         db?.execSQL("Create Table perfil(_idCliente int primary key, nomCliente text, apellidoCliente text,RFC text, comunidad text,colonia text,calle text,cp int, tel int)")
-
+        db?.execSQL("Create Table lineasped(idPedido int primary key, lineas int, nomPan text,cantidad int,precioUnit double, total double)")
     }
 
     // Permite ejecutar Insert, Update o Delete
