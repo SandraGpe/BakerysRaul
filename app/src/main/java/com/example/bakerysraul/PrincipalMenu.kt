@@ -30,7 +30,7 @@ class PrincipalMenu : AppCompatActivity() {
             id = reg.getStringExtra(EXTRA_ID)
             contra = reg.getStringExtra(EXTRA_CONTRA)
         } else {
-            val acti : Intent = Intent(this,MainRegistro::class.java)
+            val acti : Intent = Intent(this,PrincipalMenu::class.java)
             startActivity(acti)
         }
 

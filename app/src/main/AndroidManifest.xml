@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CalifGrafica"></activity>
+        <activity android:name=".Pedidos"></activity>
+        <activity android:name=".CalifGrafica" />
         <activity
             android:name=".DetallePedidos"
             android:parentActivityName=".PrincipalMenu" />

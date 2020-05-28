@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pedidos">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pedidos"
+            android:textSize="50sp"
+            android:textColor="#0d47a1"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:textStyle="bold"/>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rowCount="2"
+            android:columnCount="1"
+            android:layout_margin="15dp"
+            android:alignmentMode="alignMargins"
+            android:layout_gravity="center_horizontal"
+            android:columnOrderPreserved="false"
+            android:background="@drawable/backperfil">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/txtIDPed"
+                android:layout_width="170dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:background="#11000000"
+                android:ems="15"
+                android:textSize="24sp"
+                android:hint="ID Pedido"
+                android:inputType="textPersonName"
+                android:layout_margin="5dp"/>
+            <EditText
+                android:id="@+id/txtIDCli"
+                android:layout_width="170dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:layout_below="@+id/txtIDPed"
+                android:background="#11000000"
+                android:ems="15"
+                android:textSize="24sp"
+                android:hint="ID Cliente"
+                android:inputType="textPersonName"
+                android:layout_margin="5dp"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/fechaPed"
+                    android:layout_width="250dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="100dp"
+                    android:background="#11000000"
+                    android:ems="15"
+                    android:hint="Fecha Pedido"
+                    android:inputType="textPersonName"
+                    android:textSize="24sp" />
+                <EditText
+                    android:id="@+id/fechaEnt"
+                    android:layout_width="280dp"
+                    android:layout_height="55dp"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="100dp"
+                    android:layout_marginTop="200dp"
+                    android:background="#11000000"
+                    android:ems="15"
+                    android:hint="Fecha Pedido"
+                    android:inputType="textPersonName"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        </GridLayout>
+    </LinearLayout>
+</ScrollView>
