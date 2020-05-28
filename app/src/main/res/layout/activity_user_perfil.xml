@@ -22,14 +22,16 @@
                 android:id="@+id/Titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="25dp"
-                android:text="Perfil"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
+                android:text="Clientes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/menuTexto"
                 android:textSize="50sp"
-                android:textStyle="bold|italic"/>
+                android:textStyle="bold|italic" />
 
             <EditText
                 android:id="@+id/txtIdU"
