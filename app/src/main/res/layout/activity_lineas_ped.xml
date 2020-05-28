@@ -28,16 +28,17 @@
         android:id="@+id/lineas"
         android:layout_width="150dp"
         android:layout_height="55dp"
-        android:layout_marginTop="168dp"
         android:background="#ec407a"
         android:ems="15"
         android:hint="lineas"
         android:inputType="textPersonName"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.249"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.248" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -114,19 +115,21 @@
         android:id="@+id/Pedir"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="64dp"
         android:background="@drawable/s"
+        android:onClick="Agregar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintHorizontal_bias="0.282"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/Borrar"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="64dp"
         android:background="@drawable/ss"
+        android:onClick="limpiar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.742"
@@ -136,12 +139,13 @@
         android:id="@+id/regresar"
         android:layout_width="61dp"
         android:layout_height="59dp"
-        android:layout_marginBottom="656dp"
         android:background="@drawable/sss"
         android:onClick="regresar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -68,6 +68,14 @@ class lineasPed : AppCompatActivity() {
         val intent: Intent = Intent(this,Pedidos::class.java)
         startActivity(intent)
     }
+    fun limpiar(v:View){
+        idPedido.setText("")
+        lineas.setText("")
+        idPan.setText("")
+        cantidad.setText("")
+        preciounitario.setText("")
+        total.setText("")
+    }
     fun sendRequest( wsURL: String, jsonEnt: JSONObject){
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.POST, wsURL,jsonEnt,
