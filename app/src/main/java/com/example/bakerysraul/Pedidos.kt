@@ -89,7 +89,7 @@ class Pedidos : AppCompatActivity() {
     }
 
     fun aaa(v:View){
-        val intent: Intent = Intent(this,DetallePedidos::class.java)
+        val intent: Intent = Intent(this,lineasPed::class.java)
         startActivity(intent)
     }
 

@@ -1,14 +1,21 @@
 package com.example.bakerysraul
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_lineas_ped.*
+import org.json.JSONObject
 
 class lineasPed : AppCompatActivity() {
-
+    val IP = "http://192.168.0.7"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lineas_ped)
@@ -28,5 +35,62 @@ class lineasPed : AppCompatActivity() {
 
             }
         }
+    }
+
+    fun Agregar(v: View){
+        if (idPedido.text.toString().isEmpty() ||
+            lineas.text.toString().isEmpty() ||
+            idPan.text.toString().isEmpty() ||
+            cantidad.text.toString().isEmpty() ||
+            preciounitario.text.toString().isEmpty() ||
+            total.text.toString().isEmpty()){
+            idPedido.setError("Falta información de Ingresar")
+            idPedido.requestFocus()
+        } else {
+            val id = idPedido.text.toString()
+            val num = lineas.text.toString()
+            val idp = idPan.text.toString()
+            val cant = cantidad.text.toString()
+            val pre = preciounitario.text.toString()
+            val tot = total.text.toString()
+            val admin = adminbd(this)
+            var jsonEntrada = JSONObject()
+            jsonEntrada.put("idPedido", idPedido.text.toString())
+            jsonEntrada.put("lineas", lineas.text.toString())
+            jsonEntrada.put("idPan",idPan.text.toString())
+            jsonEntrada.put("cantidad",cantidad.text.toString())
+            jsonEntrada.put("precioUnit",preciounitario.text.toString())
+            jsonEntrada.put("total",total.text.toString())
+            sendRequest(IP + "/WSBakery/agregarPanesPed.php",jsonEntrada)
+        }
+    }
+    fun regresar(v:View){
+        val intent: Intent = Intent(this,Pedidos::class.java)
+        startActivity(intent)
+    }
+    fun sendRequest( wsURL: String, jsonEnt: JSONObject){
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.POST, wsURL,jsonEnt,
+            Response.Listener { response ->
+                val succ = response["success"]
+                val msg = response["message"]
+                if (succ == 200){
+                    idPedido.setText("")
+                    lineas.setText("")
+                    idPan.setText("")
+                    cantidad.setText("")
+                    preciounitario.setText("")
+                    total.setText("")
+                    idPedido.requestFocus()
+                    Toast.makeText(this, "Success:${succ}  Message:${msg} Servidor Web Modificado", Toast.LENGTH_SHORT).show();
+                }
+            },
+            Response.ErrorListener{ error ->
+                Toast.makeText(this, "${error.message}", Toast.LENGTH_SHORT).show();
+                Log.d("ERROR","${error.message}");
+                Toast.makeText(this, "Error de capa 8 checa URL", Toast.LENGTH_SHORT).show();
+            }
+        )
+        VolleySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
     }
 }
