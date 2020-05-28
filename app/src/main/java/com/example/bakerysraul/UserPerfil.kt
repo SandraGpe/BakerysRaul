@@ -64,7 +64,7 @@ class UserPerfil : AppCompatActivity() {
                         val tel = sensadoJson.getJSONObject(0).getString("tel")
 
                         txtIdU.setText(id)
-                        txtCliente.setText(nom)
+                        idPedido.setText(nom)
                         txtApellido.setText(ape)
                         txtRFC.setText(rfc)
                         txtComunidad.setText(com)
@@ -157,7 +157,7 @@ class UserPerfil : AppCompatActivity() {
     //SI FUNCIONA
     fun Actualizar(view: View) {
         if (txtIdU.text.toString().isEmpty() ||
-            txtCliente.text.toString().isEmpty() ||
+            idPedido.text.toString().isEmpty() ||
             txtApellido.text.toString().isEmpty() ||
             txtComunidad.text.toString().isEmpty() ||
             txtCalle.text.toString().isEmpty() ||
@@ -171,7 +171,7 @@ class UserPerfil : AppCompatActivity() {
         else
         {
             val id = txtIdU.text.toString()
-            val nom = txtCliente.text.toString()
+            val nom = idPedido.text.toString()
             val ape = txtApellido.text.toString()
             val rfc = txtRFC.text.toString()
             val com = txtComunidad.text.toString()
@@ -182,7 +182,7 @@ class UserPerfil : AppCompatActivity() {
             val admin = adminbd(this)
             var jsonEntrada = JSONObject()
             jsonEntrada.put("idCliente", txtIdU.text.toString())
-            jsonEntrada.put("nomCliente", txtCliente.text.toString())
+            jsonEntrada.put("nomCliente", idPedido.text.toString())
             jsonEntrada.put("apellidoCliente", txtApellido.text.toString())
             jsonEntrada.put("RFC",txtRFC.text.toString())
             jsonEntrada.put("comunidad",txtComunidad.text.toString())
@@ -191,7 +191,7 @@ class UserPerfil : AppCompatActivity() {
             jsonEntrada.put("cp",txtCP.text.toString())
             jsonEntrada.put("tel",txtTel.text.toString())
             txtIdU.setText("")
-            txtCliente.setText("")
+            idPedido.setText("")
             txtApellido.setText("")
             txtRFC.setText("")
             txtComunidad.setText("")
@@ -208,7 +208,7 @@ class UserPerfil : AppCompatActivity() {
     //SI FUNCIONA
     fun Limpiar(v:View){
         txtIdU.setText("")
-        txtCliente.setText("")
+        idPedido.setText("")
         txtApellido.setText("")
         txtRFC.setText("")
         txtComunidad.setText("")
@@ -220,7 +220,7 @@ class UserPerfil : AppCompatActivity() {
 
     //SI FUNCIONA
     fun Agregar(v: View){
-        if (txtCliente.text.toString().isEmpty() ||
+        if (idPedido.text.toString().isEmpty() ||
             txtApellido.text.toString().isEmpty() ||
             txtComunidad.text.toString().isEmpty() ||
             txtCalle.text.toString().isEmpty() ||
@@ -230,7 +230,7 @@ class UserPerfil : AppCompatActivity() {
             txtIdU.setError("Falta información de Ingresar")
             txtIdU.requestFocus()
         } else {
-            val nom = txtCliente.text.toString()
+            val nom = idPedido.text.toString()
             val ape = txtApellido.text.toString()
             val rfc = txtRFC.text.toString()
             val com = txtComunidad.text.toString()
@@ -240,7 +240,7 @@ class UserPerfil : AppCompatActivity() {
             val tel = txtTel.text.toString()
             val admin = adminbd(this)
             var jsonEntrada = JSONObject()
-            jsonEntrada.put("nomCliente", txtCliente.text.toString())
+            jsonEntrada.put("nomCliente", idPedido.text.toString())
             jsonEntrada.put("apellidoCliente", txtApellido.text.toString())
             jsonEntrada.put("RFC",txtRFC.text.toString())
             jsonEntrada.put("comunidad",txtComunidad.text.toString())
@@ -263,7 +263,7 @@ class UserPerfil : AppCompatActivity() {
             var jsonEntrada = JSONObject()
             jsonEntrada.put("idCliente", txtIdU.text.toString())
             txtIdU.setText("")
-            txtCliente.setText("")
+            idPedido.setText("")
             txtApellido.setText("")
             txtRFC.setText("")
             txtComunidad.setText("")
@@ -283,7 +283,7 @@ class UserPerfil : AppCompatActivity() {
                 val succ = response["success"]
                 val msg = response["message"]
                 if (succ == 200){
-                    txtCliente.setText("")
+                    idPedido.setText("")
                     txtApellido.setText("")
                     txtRFC.setText("")
                     txtComunidad.setText("")
@@ -291,7 +291,7 @@ class UserPerfil : AppCompatActivity() {
                     txtCP.setText("")
                     txtCalle.setText("")
                     txtTel.setText("")
-                    txtCliente.requestFocus()
+                    idPedido.requestFocus()
                     Toast.makeText(this, "Success:${succ}  Message:${msg} Servidor Web Modificado", Toast.LENGTH_SHORT).show();
                 }
             },
