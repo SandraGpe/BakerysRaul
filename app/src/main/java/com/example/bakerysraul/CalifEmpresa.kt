@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_calif_empresa.*
 import org.json.JSONObject
 
 class CalifEmpresa : AppCompatActivity() {
-    val IP = "http://192.168.1.77"
+    val IP = "http://192.168.0.7"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

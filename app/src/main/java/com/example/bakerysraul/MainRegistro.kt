@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main_registro.txtCorr
 import org.json.JSONObject
 
 class MainRegistro : AppCompatActivity() {
-    val IP = "http://192.168.1.77" // Dirección IP del servidor web que almacena los servicios web
+    val IP = "http://192.168.0.7" // Dirección IP del servidor web que almacena los servicios web
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

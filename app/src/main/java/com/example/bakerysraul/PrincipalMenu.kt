@@ -49,7 +49,7 @@ class PrincipalMenu : AppCompatActivity() {
                         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
                     }
                     "Carrito"->{
-                        val intent = Intent(this, Compras::class.java)
+                        val intent = Intent(this, Pedidos::class.java)
                         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
                     }
                     "DetallePed"->{

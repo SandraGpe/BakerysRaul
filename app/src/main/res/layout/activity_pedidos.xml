@@ -1,79 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Pedidos">
 
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/titulo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="visible">
+        android:layout_height="98dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="633dp"
+        android:background="@drawable/azul"
+        android:text="Pedidos"
+        android:textColor="#0d47a1"
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="98dp"
-            android:background="@drawable/azul"
-            android:text="Pedidos"
-            android:textColor="#0d47a1"
-            android:textSize="50sp"
-            android:textStyle="bold" />
-        <EditText
-            android:id="@+id/txtIDPed"
-            android:layout_width="170dp"
-            android:layout_height="55dp"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="15dp"
-            android:layout_marginTop="60dp"
-            android:background="#11000000"
-            android:ems="15"
-            android:hint="ID Pedido"
-            android:inputType="textPersonName"
-            android:textSize="24sp" />
+    <EditText
+        android:id="@+id/txtIDPed"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="219dp"
+        android:layout_marginBottom="458dp"
+        android:background="#11000000"
+        android:ems="15"
+        android:hint="ID Pedido"
+        android:inputType="textPersonName"
+        android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/txtIDCli"
-            android:layout_width="170dp"
-            android:layout_height="55dp"
-            android:layout_margin="15dp"
-            android:layout_marginTop="100dp"
-            android:background="#11000000"
-            android:ems="15"
-            android:hint="ID Cliente"
-            android:inputType="textPersonName"
-            android:textSize="24sp" />
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
-            android:padding="20dp"
-            android:layout_margin="15dp"
-            android:hint="Mes"
-            android:textSize="24sp"/>
+    <EditText
+        android:id="@+id/txtIDCli"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="134dp"
+        android:layout_marginBottom="543dp"
+        android:background="#11000000"
+        android:ems="15"
+        android:hint="ID Cliente"
+        android:inputType="textPersonName"
+        android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/fechaEnt"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:hint="Mes"
-            android:layout_margin="15dp"
-            android:background="#11000000"
-            android:ems="15"/>
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
-            android:padding="20dp"
-            android:layout_margin="15dp"
-            android:hint="Dia"
-            android:textSize="24sp"
-            android:layout_marginLeft="100dp"/>
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="368dp"
+        android:hint="Mes"
+        android:padding="20dp"
+        android:textSize="24sp" />
 
-    </LinearLayout>
-</ScrollView>
+    <TextView
+        android:id="@+id/fechaEnt"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="191dp"
+        android:layout_marginBottom="288dp"
+        android:background="#11000000"
+        android:ems="15"
+        android:gravity="center"
+        android:hint="Fecha"
+        android:textSize="24sp"/>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="267dp"
+        android:layout_marginBottom="287dp"
+        android:hint="Dia"
+        android:padding="20dp"
+        android:textSize="24sp" />
+
+</RelativeLayout>
