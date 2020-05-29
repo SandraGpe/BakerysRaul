@@ -20,8 +20,8 @@
 
             <TextView
                 android:id="@+id/Titulo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="351dp"
+                android:layout_height="66dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="25dp"
@@ -29,9 +29,10 @@
                 android:layout_marginBottom="25dp"
                 android:text="Clientes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/menuTexto"
+                android:textColor="#ec407a"
                 android:textSize="50sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold"
+                android:gravity="center"/>
 
             <EditText
                 android:id="@+id/txtIdU"

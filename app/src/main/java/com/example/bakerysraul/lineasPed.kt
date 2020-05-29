@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_lineas_ped.*
 import org.json.JSONObject
 
 class lineasPed : AppCompatActivity() {
-    val IP = "http://192.168.0.7"
+    val IP = "http://192.168.1.77"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lineas_ped)
@@ -42,30 +42,29 @@ class lineasPed : AppCompatActivity() {
             lineas.text.toString().isEmpty() ||
             idPan.text.toString().isEmpty() ||
             cantidad.text.toString().isEmpty() ||
-            preciounitario.text.toString().isEmpty() ||
-            total.text.toString().isEmpty()){
+            preciounitario.text.toString().isEmpty()){
             idPedido.setError("Falta información de Ingresar")
             idPedido.requestFocus()
         } else {
             val id = idPedido.text.toString()
+            val idc = idCliente.text.toString()
             val num = lineas.text.toString()
             val idp = idPan.text.toString()
             val cant = cantidad.text.toString()
             val pre = preciounitario.text.toString()
-            val tot = total.text.toString()
             val admin = adminbd(this)
             var jsonEntrada = JSONObject()
             jsonEntrada.put("idPedido", idPedido.text.toString())
+            jsonEntrada.put("idCliente", idCliente.text.toString())
             jsonEntrada.put("lineas", lineas.text.toString())
             jsonEntrada.put("idPan",idPan.text.toString())
             jsonEntrada.put("cantidad",cantidad.text.toString())
             jsonEntrada.put("precioUnit",preciounitario.text.toString())
-            jsonEntrada.put("total",total.text.toString())
             sendRequest(IP + "/WSBakery/agregarPanesPed.php",jsonEntrada)
         }
     }
     fun regresar(v:View){
-        val intent: Intent = Intent(this,Pedidos::class.java)
+        val intent: Intent = Intent(this,PrincipalMenu::class.java)
         startActivity(intent)
     }
     fun limpiar(v:View){
@@ -74,7 +73,7 @@ class lineasPed : AppCompatActivity() {
         idPan.setText("")
         cantidad.setText("")
         preciounitario.setText("")
-        total.setText("")
+        idCliente.setText("")
     }
     fun sendRequest( wsURL: String, jsonEnt: JSONObject){
         val jsonObjectRequest = JsonObjectRequest(
@@ -88,7 +87,7 @@ class lineasPed : AppCompatActivity() {
                     idPan.setText("")
                     cantidad.setText("")
                     preciounitario.setText("")
-                    total.setText("")
+                    idCliente.setText("")
                     idPedido.requestFocus()
                     Toast.makeText(this, "Success:${succ}  Message:${msg} Servidor Web Modificado", Toast.LENGTH_SHORT).show();
                 }

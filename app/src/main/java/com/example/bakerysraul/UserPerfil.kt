@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_user_perfil.*
 import org.json.JSONObject
 
 class UserPerfil : AppCompatActivity() {
-    val IP = "http://192.168.0.7" // Dirección IP del servidor web que almacena los servicios web
+    val IP = "http://192.168.1.77" // Dirección IP del servidor web que almacena los servicios web
     val idCliente = 0
     var bandera : Boolean = false
 

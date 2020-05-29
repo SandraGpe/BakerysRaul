@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_pedidos.*
 import org.json.JSONObject
 
 class Pedidos : AppCompatActivity() {
-    val IP = "http://192.168.0.7"
+    val IP = "http://192.168.1.77"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,6 +90,11 @@ class Pedidos : AppCompatActivity() {
 
     fun aaa(v:View){
         val intent: Intent = Intent(this,lineasPed::class.java)
+        startActivity(intent)
+    }
+
+    fun regresar(v:View){
+        val intent: Intent = Intent(this,PrincipalMenu::class.java)
         startActivity(intent)
     }
 
