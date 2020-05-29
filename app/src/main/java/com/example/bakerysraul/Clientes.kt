@@ -1,13 +1,13 @@
 package com.example.bakerysraul
 
-class Clientes (nomClientes:String, idClientes:String,apellidoClientes: String){
-    var nom:String=""
+class Clientes (idClientes:String, nomClientes:String, apellidoClientes: String){
     var id:String=""
+    var nom:String=""
     var ape:String=""
     init
     {
-        this.nom = nomClientes
         this.id =idClientes
+        this.nom = nomClientes
         this.ape = apellidoClientes
 
     }

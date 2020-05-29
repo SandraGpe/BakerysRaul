@@ -4,8 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.celda_prototipo_clientes.view.*
 
@@ -34,7 +32,6 @@ private val mContext: Context, private val clickListener: (Clientes)-> Unit)
         fun bind(estud:Clientes,context: Context,clickListener: (Clientes) -> Unit) {
             itemView.Nombre.text = estud.nom.toString()
             itemView.Apellido.text = estud.ape.toString()
-
             itemView.setOnClickListener{clickListener(estud)}
             }
     }
