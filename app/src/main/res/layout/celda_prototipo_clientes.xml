@@ -10,15 +10,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="10dp">
-    <ImageView
-        android:id="@+id/ivAvatar"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:scaleType="centerCrop"
-        android:background="@drawable/cc"/>
-
     <TextView
         android:id="@+id/Nombre"
         android:layout_width="wrap_content"

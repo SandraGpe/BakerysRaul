@@ -18,7 +18,6 @@ private val mContext: Context, private val clickListener: (Clientes)-> Unit)
 
     override fun onBindViewHolder(holder: ClientesAdapter.ClientesViewHolder, position: Int) {
         holder.bind(mListClientes[position],mContext,clickListener)
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun getItemCount(): Int=mListClientes.size
