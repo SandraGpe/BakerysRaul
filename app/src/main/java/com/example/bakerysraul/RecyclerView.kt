@@ -46,8 +46,8 @@ class RecyclerView : AppCompatActivity() {
         }).attachToRecyclerView(rv_clientes_list)
     }
 
-    private fun onItemClickListener(Estud:Clientes){
-        Toast.makeText(this,"Clicked item" + Estud.nom, Toast.LENGTH_LONG).show()
+    private fun onItemClickListener(estud:Clientes){
+        Toast.makeText(this,"Clicked item" + estud.nom, Toast.LENGTH_LONG).show()
     }
 
     override fun onResume() {

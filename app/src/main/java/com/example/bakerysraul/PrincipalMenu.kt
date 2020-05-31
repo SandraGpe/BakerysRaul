@@ -44,7 +44,7 @@ class PrincipalMenu : AppCompatActivity() {
                     index: Int -> Toast.makeText(this, "Selected "+ menu[index], Toast.LENGTH_SHORT).show()
                 when(menu[index]){
                     "Historial"->{
-                        val intent = Intent(this, RecyclerView::class.java)
+                        val intent = Intent(this, VistaLista::class.java)
                         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
                     }
                     "Carrito"->{
