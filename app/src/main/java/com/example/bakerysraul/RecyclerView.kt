@@ -30,7 +30,8 @@ class RecyclerView : AppCompatActivity() {
         }
 
             ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT){
-            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder)
+                    : Boolean {
                 return false
             }
 
@@ -60,7 +61,7 @@ class RecyclerView : AppCompatActivity() {
     }
 
     fun getClientes(): MutableList<Clientes>{
-        var perfil:MutableList<Clientes> = ArrayList()
+        var clientes:MutableList<Clientes> = ArrayList()
         val admin = adminbd(this)
 
         //
@@ -69,10 +70,10 @@ class RecyclerView : AppCompatActivity() {
             val id = tupla.getString(0)
             val nom = tupla.getString(1)
             val ape = tupla.getString(2)
-            perfil.add(Clientes(id,nom,ape))
+            clientes.add(Clientes(id,nom,ape))
         }
         tupla.close()
         admin.close()
-        return perfil
+        return clientes
     }
 }

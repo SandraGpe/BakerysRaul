@@ -17,7 +17,7 @@ class PrincipalMenu : AppCompatActivity() {
         val EXTRA_ID = "id"
         val EXTRA_CONTRA = "contrasena"
     }
-    val menu = arrayOf("Historial", "Carrito", "DetallePed", "Perfil", "Calificar", "Catalogo")
+    val menu = arrayOf("Historial", "Carrito", "Perfil", "Calificar", "Catalogo")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +37,6 @@ class PrincipalMenu : AppCompatActivity() {
         circle_menu.setMainMenu(Color.parseColor("#9e9e9e"), R.drawable.openopen, R.drawable.closeclose)
             .addSubMenu(Color.parseColor("#00b0ff"), R.drawable.historial)
             .addSubMenu(Color.parseColor("#76ff03"), R.drawable.carrito)
-            .addSubMenu(Color.parseColor("#8e24aa"), R.drawable.detalle)
             .addSubMenu(Color.parseColor("#fb8c00"), R.drawable.user)
             .addSubMenu(Color.parseColor("#f50057"), R.drawable.calif)
             .addSubMenu(Color.parseColor("#ffeb3b"), R.drawable.catalogo)
@@ -50,10 +49,6 @@ class PrincipalMenu : AppCompatActivity() {
                     }
                     "Carrito"->{
                         val intent = Intent(this, Pedidos::class.java)
-                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
-                    }
-                    "DetallePed"->{
-                        val intent = Intent(this, DetallePedidos::class.java)
                         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
                     }
                     "Perfil"->{

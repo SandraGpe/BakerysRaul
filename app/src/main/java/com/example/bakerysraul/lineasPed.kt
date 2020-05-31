@@ -68,6 +68,9 @@ class lineasPed : AppCompatActivity() {
         startActivity(intent)
     }
     fun limpiar(v:View){
+        idCliente.setText("")
+        idPedido.setText("")
+        lineas.setText("")
         idPan.setText("")
         cantidad.setText("")
         preciounitario.setText("")
@@ -80,12 +83,9 @@ class lineasPed : AppCompatActivity() {
                 val succ = response["success"]
                 val msg = response["message"]
                 if (succ == 200){
-                    idPedido.setText("")
-                    lineas.setText("")
                     idPan.setText("")
                     cantidad.setText("")
                     preciounitario.setText("")
-                    idCliente.setText("")
                     idPedido.requestFocus()
                     Toast.makeText(this, "Success:${succ}  Message:${msg} Servidor Web Modificado", Toast.LENGTH_SHORT).show();
                 }
