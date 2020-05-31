@@ -17,7 +17,7 @@ class VistaLista : AppCompatActivity() {
         setContentView(R.layout.activity_vista_lista)
     }
     fun getAllClientes(view: View) {
-        val wsURL = IP + "/WSBakery/getClientes.php"
+        val wsURL = IP + "/WSBakery/listaClientes.php"
         val admin = adminbd(this)
         admin.Ejecuta("DELETE FROM perfil")
         val jsonObjectRequest = JsonObjectRequest(
@@ -31,13 +31,7 @@ class VistaLista : AppCompatActivity() {
                     val idcliente = sensadoJson.getJSONObject(i).getString("idCliente")
                     val nomcliente = sensadoJson.getJSONObject(i).getString("nomCliente")
                     val apellidoCliente = sensadoJson.getJSONObject(i).getString("apellidoCliente")
-                    val rfc = sensadoJson.getJSONObject(i).getString("RFC")
-                    val comunidad = sensadoJson.getJSONObject(i).getString("comunidad")
-                    val colonia= sensadoJson.getJSONObject(i).getString("colonia")
-                    val calle = sensadoJson.getJSONObject(i).getString("calle")
-                    val cp= sensadoJson.getJSONObject(i).getString("cp")
-                    val tel = sensadoJson.getJSONObject(i).getString("tel")
-                    val sentencia = "Insert into perfil(idCliente,nomCliente,apellidoCliente,RFC,comunidad,colonia,calle,cp,tel) values(${idcliente},'${nomcliente}','${apellidoCliente}','${rfc}','${comunidad}','${colonia}','${calle}',${cp},${tel})"
+                    val sentencia = "Insert into perfil(idCliente,nomCliente,apellidoCliente) values(${idcliente},'${nomcliente}','${apellidoCliente}')"
                     val res = admin.Ejecuta(sentencia)
                 }
             },
