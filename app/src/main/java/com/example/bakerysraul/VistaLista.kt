@@ -9,6 +9,9 @@ import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
+import kotlinx.android.synthetic.main.activity_vista_lista.*
+import kotlinx.android.synthetic.main.celda_prototipo_clientes.*
+import kotlinx.android.synthetic.main.celda_prototipo_clientes.txtApe
 
 class VistaLista : AppCompatActivity() {
     val IP = "http://192.168.1.77"
@@ -16,31 +19,25 @@ class VistaLista : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vista_lista)
     }
-    fun getAllClientes(view: View) {
-        val wsURL = IP + "/WSBakery/listaClientes.php"
-        val admin = adminbd(this)
-        admin.Ejecuta("DELETE FROM perfil")
-        val jsonObjectRequest = JsonObjectRequest(
-            Request.Method.POST,wsURL,null,
-            Response.Listener { response ->
-                val succ = response["success"]
-                val msg = response["message"]
-                val sensadoJson = response.getJSONArray("clientes")
-                for (i in 0 until sensadoJson.length()){
-                    // Los nombres del getString son como los arroja el servicio web
-                    val idcliente = sensadoJson.getJSONObject(i).getString("idCliente")
-                    val nomcliente = sensadoJson.getJSONObject(i).getString("nomCliente")
-                    val apellidoCliente = sensadoJson.getJSONObject(i).getString("apellidoCliente")
-                    val sentencia = "Insert into perfil(idCliente,nomCliente,apellidoCliente) values(${idcliente},'${nomcliente}','${apellidoCliente}')"
-                    val res = admin.Ejecuta(sentencia)
-                }
-            },
-            Response.ErrorListener { error ->
-                Toast.makeText(this, "Error getAllClientes: " + error.message.toString() , Toast.LENGTH_LONG).show();
-                Log.d("GonzalezSandra",error.message.toString() )
-            }
-        )
-        VolleySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
+    fun save(v: View){
+        if (idNom.text.isEmpty() || idApe.text.isEmpty()){
+            idNom.setError("Falta información de ingresar")
+            idNom.requestFocus()
+        }
+        else
+        {
+            val admin = adminbd(this)
+            val nom = idNom.text.toString()
+            val ape = idApe.text.toString()
+            val sentencia = "Insert into perfiles(nomCliente,apeCliente) values ('${nom}','${ape}')"
+            if (admin.Ejecuta(sentencia)==1){
+                Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show();
+                idNom.setText("")
+                idApe.setText("")
+                idNom.requestFocus()
+            } else {
+                Toast.makeText(this, "Error de capa 8 No Guardo", Toast.LENGTH_SHORT).show(); }
+        }
     }
 
     fun verlista(v:View){

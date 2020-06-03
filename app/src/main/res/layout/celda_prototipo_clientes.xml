@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="10dp">
-    <TextView
-        android:id="@+id/Nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/ivAvatar"
-        android:layout_toEndOf="@+id/ivAvatar"
-        tools:text="Nombre" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="10dp"
+    app:cardElevation="4dp">
 
-    <TextView
-        android:id="@+id/Apellido"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:layout_below="@+id/Nombre"
-        android:layout_toRightOf="@+id/ivAvatar"
-        android:layout_toEndOf="@+id/ivAvatar"
-        tools:text ="Apellido"/>
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/user"/>
+        <TextView
+            android:id="@+id/txtNom"
+            android:layout_gravity="center|clip_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:layout_toRightOf="@+id/thumbnail"/>
+        <TextView
+            android:id="@+id/txtApe"
+            android:layout_gravity="center|clip_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:layout_toRightOf="@+id/thumbnail"
+            android:layout_below="@+id/txtNom"/>
 
-    <TextView
-        android:id="@+id/idC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="italic"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        tools:text ="ID"/>
-    </LinearLayout>
-</LinearLayout>
+        <TextView
+            android:id="@+id/txtID"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/thumbnail"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

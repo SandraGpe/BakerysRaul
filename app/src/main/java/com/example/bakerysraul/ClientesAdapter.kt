@@ -49,9 +49,9 @@ private val mContext: Context, private val clickListener: (Clientes)-> Unit)
     fun getTask(): List<Clientes> = mListClientes
     class ClientesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun bind(estud:Clientes,context: Context,clickListener: (Clientes) -> Unit) {
-            itemView.idC.text = estud.id.toString()
-            itemView.Nombre.text = estud.nom.toString()
-            itemView.Apellido.text = estud.ape.toString()
+            itemView.txtID.text = estud.id.toString()
+            itemView.txtNom.text = estud.nom.toString()
+            itemView.txtApe.text = estud.ape.toString()
             itemView.setOnClickListener{clickListener(estud)}
             }
     }

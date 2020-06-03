@@ -10,18 +10,18 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
 class RecyclerView : AppCompatActivity() {
-    private lateinit var viewAdapter: ClientesAdapter
-    private lateinit var viewManager: RecyclerView.LayoutManager
-    val cList: List<Clientes> = ArrayList()
+    private lateinit var viewAdapter:ClientesAdapter
+    private lateinit var viewManager:RecyclerView.LayoutManager
+    val personasList: List<Clientes> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
 
         viewManager = LinearLayoutManager(this)
-        viewAdapter = ClientesAdapter(cList,this, clickListener = { estud:Clientes -> onItemClickListener(estud)})
+        viewAdapter = ClientesAdapter(personasList,this, clickListener = { estud:Clientes -> onItemClickListener(estud)})
 
-                rv_clientes_list.apply{
+                recycler.apply{
             setHasFixedSize(true)
             layoutManager = viewManager
             adapter = viewAdapter
@@ -39,11 +39,11 @@ class RecyclerView : AppCompatActivity() {
                val position = viewHolder.adapterPosition
                 val estud = viewAdapter.getTask()
                 val admin = adminbd(baseContext)
-                if(admin.Ejecuta("DELETE from perfil where idCliente=" + estud[position].id)==1){
-                    retrieveClientes()
+                if(admin.Ejecuta("DELETE from perfiles where idCliente=" + estud[position].id)==1){
+                    retrievePerfiles()
                 }
             }
-        }).attachToRecyclerView(rv_clientes_list)
+        }).attachToRecyclerView(recycler)
     }
 
     private fun onItemClickListener(estud:Clientes){
@@ -52,28 +52,28 @@ class RecyclerView : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        retrieveClientes()
+        retrievePerfiles()
     }
 
-    private fun retrieveClientes(){
-        val clientestx = getClientes()
-        viewAdapter.setTask(clientestx!!)
+    private fun retrievePerfiles(){
+        val perfiltx = getClientes()
+        viewAdapter.setTask(perfiltx!!)
     }
 
     fun getClientes(): MutableList<Clientes>{
-        var clientes:MutableList<Clientes> = ArrayList()
+        var perfiles:MutableList<Clientes> = ArrayList()
         val admin = adminbd(this)
 
         //
-        val tupla = admin.Consulta("SELECT idCliente, nomCliente, apellidoCliente FROM perfil ORDER BY idCliente")
+        val tupla = admin.Consulta("SELECT idCliente, nomCliente, apeCliente FROM perfiles ORDER BY idCliente")
         while (tupla!!.moveToNext()){
             val id = tupla.getString(0)
             val nom = tupla.getString(1)
             val ape = tupla.getString(2)
-            clientes.add(Clientes(id,nom,ape))
+            perfiles.add(Clientes(id,nom,ape))
         }
         tupla.close()
         admin.close()
-        return clientes
+        return perfiles
     }
 }

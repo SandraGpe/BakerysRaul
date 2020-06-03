@@ -1,5 +1,6 @@
 package com.example.bakerysraul
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -302,6 +303,11 @@ class UserPerfil : AppCompatActivity() {
             }
         )
         VolleySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
+    }
+
+    fun lista(v:View){
+        val lista = Intent(this, RecyclerView::class.java)
+        startActivity(lista)
     }
 
 }

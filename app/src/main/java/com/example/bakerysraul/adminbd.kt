@@ -21,6 +21,8 @@ class adminbd(context: Context): SQLiteOpenHelper(context,DataBase,null,1) {
         //Tabla para el Perfil del Usuario/Cliente
         db?.execSQL("Create Table perfil(_idCliente int primary key, nomCliente text, apellidoCliente text,RFC text, comunidad text,colonia text,calle text,cp int, tel int)")
         db?.execSQL("Create Table lineasped(idPedido int, idCliente int,lineas int, nomPan text,cantidad int,precioUnit double)")
+        db?.execSQL("Create Table perfiles(_idCliente int primary key, nomCliente text, apeCliente text)")
+
     }
 
     // Permite ejecutar Insert, Update o Delete
